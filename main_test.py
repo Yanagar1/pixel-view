@@ -1,5 +1,5 @@
 from posterize import*
-from conventional import*
+from conv_canny import*
 import timeit
 
 posterize.posterize("puppy.jpg", 5)

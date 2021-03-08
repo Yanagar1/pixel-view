@@ -40,3 +40,4 @@ def posterize(file_name, p):
     replace_colors(pix, kmeans_out_tuple[0], kmeans_out_tuple[1], width, height)
     img_out.save("poster.jpg")
     return
+    
