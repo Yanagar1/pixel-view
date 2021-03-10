@@ -1,4 +1,4 @@
-import posterize
+import post
 import cv2 as cv
 import numpy as np
 
@@ -17,12 +17,11 @@ def print_edges_contours(img):
 
     canvas = create_canvas(img)
 
-    #smooth image here
     blurred_img = cv.GaussianBlur(img, (3,3), 1, 1)
     #Canny(InputArray image, OutputArray edges,
     #double threshold1, double threshold2, int apertureSize = 3,bool L2gradient = false )
     #https://stackoverflow.com/questions/63543033/does-cv2-canny-perform-a-gaussian-blur
-    edges = cv.Canny(blurred_img,100,200)
+    edges = cv.Canny(blurred_img,100,170)
     contours, hierarchy = cv.findContours(edges, cv.RETR_TREE, cv.CHAIN_APPROX_SIMPLE)
     img_w_cntrs = cv.drawContours(canvas, contours, -1, (0,255,0), 1)
 
